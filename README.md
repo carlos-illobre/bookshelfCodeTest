@@ -4,7 +4,7 @@ Install:
 1) Install docker: https://www.docker.com/community-edition#/download
 2) Install docker-compose: https://docs.docker.com/compose/install/
 3) Install nodeJs: https://nodejs.org/en/download/
-4) Clone the project: `git clone https://github.com/carlos-illobre/iqm.git`
+4) Clone the project: `git clone https://github.com/carlos-illobre/bookshelfCodeTest`
 5) Inside `codetest` folder run: `npm start`
 6) Open a browser and go to: `http://localhost:8080/rest`
 
@@ -53,8 +53,8 @@ Folder structure:
 * All the migrations are in the `migrations` folder.
 * All the html, css or client javascript files are in `client` folder.
 * All the REST endpoints are into the `app` folder
-* All the service are int the `service` folder, but what really is a service?
-* A service is just any piece of code that recive some data, executes an insolated
+* All the service are int the `service` folder, but what really is a service? 
+A service is just any piece of code that recive some data, executes an insolated
 operation and returns a field. They can be reused and must not contain any kind of state.
 
 
