@@ -25,15 +25,15 @@ older than 5 minutes as 'expired' quotes.
 Commands:
 =========
 
-`npm start`: Runs and install the project
-`npm test`: Runs the unit tests
-`npm run db:start`: Starts the database
-`npm run db:cli`: Open a database console
-`npm run db:stop`: Stops the database
-`npm run db:migrate`: Executes the migrations
-`npm run db:rollback`: Rollback the migrations
-`npm run itest`: Executes the integration tests
-`npm run itest:debug`: Debug the integration tests
+* `npm start`: Runs and install the project
+* `npm test`: Runs the unit tests
+* `npm run db:start`: Starts the database
+* `npm run db:cli`: Open a database console
+* `npm run db:stop`: Stops the database
+* `npm run db:migrate`: Executes the migrations
+* `npm run db:rollback`: Rollback the migrations
+* `npm run itest`: Executes the integration tests
+* `npm run itest:debug`: Debug the integration tests
 
 
 Environment:
@@ -48,13 +48,13 @@ and I prefer to have all the environment configuration in just one file. (DRY)
 Folder structure:
 =================
 
-The main file is `server.js`. It starts the http server.
-All the bookshelf models are in the `model` folder.
-All the migrations are in the `migrations` folder.
-All the html, css or client javascript files are in `client` folder.
-All the REST endpoints are into the `app` folder
-All the service are int the `service` folder, but what really is a service?
-A service is just any piece of code that recive some data, executes an insolated
+* The main file is `server.js`. It starts the http server.
+* All the bookshelf models are in the `model` folder.
+* All the migrations are in the `migrations` folder.
+* All the html, css or client javascript files are in `client` folder.
+* All the REST endpoints are into the `app` folder
+* All the service are int the `service` folder, but what really is a service?
+* A service is just any piece of code that recive some data, executes an insolated
 operation and returns a field. They can be reused and must not contain any kind of state.
 
 
