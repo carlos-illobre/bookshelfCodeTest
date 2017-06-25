@@ -1,0 +1,29 @@
+version: '2'
+services:
+  web:
+    build: .
+    environment:
+      WEB_DOMAIN: '${WEB_DOMAIN}'
+      DB_NAME: '${DB_NAME}'
+      DB_HOST: 'db'
+      DB_USER: '${DB_USER}'
+      DB_PASSWORD: '${DB_PASSWORD}'
+      EMAIL_API_KEY: '${EMAIL_API_KEY}'
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+  db:
+    image: postgres:alpine
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: '${DB_NAME}'
+      POSTGRES_USER: '${DB_USER}'
+      POSTGRES_PASSWORD: '${DB_PASSWORD}'
+    volumes:
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
