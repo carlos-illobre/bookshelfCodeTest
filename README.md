@@ -5,10 +5,10 @@ To build a system to manage quotes between consumers and contractors. This is pa
 
 A quote is comprised of several line items, including:
 
-labour
-expenses
-sales tax
-miscellaneous
+* labour
+* expenses
+* sales tax
+* miscellaneous
 
 
 Install:
