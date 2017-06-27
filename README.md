@@ -26,12 +26,14 @@ Endpoints:
 ==========
 
 1) API index
+
 `GET http://localhost:8080/rest`
 
 2) As a consumer I want to register entering my name, email and password. (No editing or deleting).
+
 `POST http://localhost:8080/rest/v1/consumers`
 ```
-{
+body: {
   name: 'some_name',
   email: 'some@email',
   password: 'some_password',
@@ -39,9 +41,10 @@ Endpoints:
 ```
 
 3) As a contractor I want to register entering my name, email and password. (No editing or deleting).
+
 `POST http://localhost:8080/rest/v1/contractors`
 ```
-{
+body: {
   name: 'some_name',
   email: 'some@email',
   password: 'some_password'
@@ -49,26 +52,29 @@ Endpoints:
 ```
 
 4) As a consumer I want to login to the system with email and password.
+
 `POST http://localhost:8080/rest/v1/consumers/login`
 ```
-{
+body: {
   email: 'some@email',
   password: 'some_password'
 }
 ```
 
 5) As a contractor I want to login to the system with email and password.
+
 `POST http://localhost:8080/rest/v1/contractors/login`
 ```
-{
+body: {
   email: 'some@email',
   password: 'some_password'
 }
 ```
 
 6) As a contractor I want to propose a quote to a consumer.
+
 `POST http://localhost:8080/rest/v1/contractors/me/quotes`
-`HEADER jwt: some_jwt`
+`header: { jwt: some_jwt }`
 ```
 {
   labour: 'some_labour',
@@ -80,6 +86,7 @@ Endpoints:
 ```
 
 7) As a consumer I want to accept or reject a proposed quote.
+
 `PUT http://localhost:8080/rest/v1/consumers/me/quotes/:quoteId/accept`
 `HEADER jwt: some_jwt`
 
