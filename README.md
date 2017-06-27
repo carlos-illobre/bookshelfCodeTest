@@ -180,7 +180,7 @@ No comments allowed:
 There are no comments in the source code for two reasons:
 
 1) TODO === TO_NEVER_DO
-2) If a piece of code needs to have comment to understand what it does the it MUST be refactored.
+2) If a piece of code needs to have a comment to understand what it does the it MUST be refactored.
 The source code should be self documented, javascript is a language so it should be use to comunicate
 using good names for variables and functions.
 
