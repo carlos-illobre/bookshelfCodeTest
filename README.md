@@ -71,9 +71,10 @@ body: {
 }
 ```
 
-6) As a contractor I want to propose a quote to a consumer.
+6) ###As a contractor I want to propose a quote to a consumer.
 
 `POST http://localhost:8080/rest/v1/contractors/me/quotes`
+
 `header: { jwt: some_jwt }`
 ```
 {
@@ -88,9 +89,11 @@ body: {
 7) As a consumer I want to accept or reject a proposed quote.
 
 `PUT http://localhost:8080/rest/v1/consumers/me/quotes/:quoteId/accept`
+
 `HEADER jwt: some_jwt`
 
 `PUT http://localhost:8080/rest/v1/consumers/me/quotes/:quoteId/reject`
+
 `HEADER jwt: some_jwt`
 
 
