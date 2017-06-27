@@ -1,3 +1,16 @@
+Description of tasks:
+=====================
+
+To build a system to manage quotes between consumers and contractors. This is part of the API of this system. No UI or frontend.
+
+A quote is comprised of several line items, including:
+
+labour
+expenses
+sales tax
+miscellaneous
+
+
 Install:
 ========
 
@@ -9,17 +22,69 @@ Install:
 6) Open a browser and go to: `http://localhost:8080/rest`
 
 
-Explain how you would implement this (but don't implement it):
-==============================================================
+Endpoints:
+==========
 
-"As a contractor, I expect quotes to be accepted or rejected within 5 minutes of sending them. Otherwise the quote expires."
+1) API index
+`GET http://localhost:8080/rest`
 
-The consumer only can accept or reject quotes with `quotes.created_at` not older than 5 minutes. The other quotes
-shouldn't be listed to the consumer so he can't accept or reject them. But in case the consumer has the quote id then
-the quote.state will not change if the quote.created_at is older than 5 minutos.
+2) As a consumer I want to register entering my name, email and password. (No editing or deleting).
+`POST http://localhost:8080/rest/v1/consumers`
+```
+{
+  name: 'some_name',
+  email: 'some@email',
+  password: 'some_password',
+}
+```
 
-On the other side, when the contractor wants to see the quotes, he will see all the quotes with `quote.created_at`
-older than 5 minutes as 'expired' quotes.
+3) As a contractor I want to register entering my name, email and password. (No editing or deleting).
+`POST http://localhost:8080/rest/v1/contractors`
+```
+{
+  name: 'some_name',
+  email: 'some@email',
+  password: 'some_password'
+}
+```
+
+4) As a consumer I want to login to the system with email and password.
+`POST http://localhost:8080/rest/v1/consumers/login`
+```
+{
+  email: 'some@email',
+  password: 'some_password'
+}
+```
+
+5) As a contractor I want to login to the system with email and password.
+`POST http://localhost:8080/rest/v1/contractors/login`
+```
+{
+  email: 'some@email',
+  password: 'some_password'
+}
+```
+
+6) As a contractor I want to propose a quote to a consumer.
+`POST http://localhost:8080/rest/v1/contractors/me/quotes`
+`HEADER jwt: some_jwt`
+```
+{
+  labour: 'some_labour',
+  expenses: 8733.11,
+  tax: 7334.31,
+  miscellaneous: 'some_miscelaleous',
+  consumerId: 1
+}
+```
+
+7) As a consumer I want to accept or reject a proposed quote.
+`PUT http://localhost:8080/rest/v1/consumers/me/quotes/:quoteId/accept`
+`HEADER jwt: some_jwt`
+
+`PUT http://localhost:8080/rest/v1/consumers/me/quotes/:quoteId/reject`
+`HEADER jwt: some_jwt`
 
 
 Commands:
@@ -124,6 +189,19 @@ The files and its test should be in the same folder.
 All the code was developed following TDD with 100% of coverage, but I would like to
 have more time to configurate some code coverage tool because if one line is not covered
 then it should be deleted.
+
+
+Explain how you would implement this (but don't implement it):
+==============================================================
+
+"As a contractor, I expect quotes to be accepted or rejected within 5 minutes of sending them. Otherwise the quote expires."
+
+The consumer only can accept or reject quotes with `quotes.created_at` not older than 5 minutes. The other quotes
+shouldn't be listed to the consumer so he can't accept or reject them. But in case the consumer has the quote id then
+the quote.state will not change if the quote.created_at is older than 5 minutos.
+
+On the other side, when the contractor wants to see the quotes, he will see all the quotes with `quote.created_at`
+older than 5 minutes as 'expired' quotes.
 
 
 Triple equal:
