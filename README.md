@@ -29,6 +29,7 @@ Endpoints:
 
 `GET http://localhost:8080/rest`
 
+
 2) As a consumer I want to register entering my name, email and password. (No editing or deleting).
 
 `POST http://localhost:8080/rest/v1/consumers`
@@ -39,6 +40,7 @@ body: {
   password: 'some_password',
 }
 ```
+
 
 3) As a contractor I want to register entering my name, email and password. (No editing or deleting).
 
@@ -51,6 +53,7 @@ body: {
 }
 ```
 
+
 4) As a consumer I want to login to the system with email and password.
 
 `POST http://localhost:8080/rest/v1/consumers/login`
@@ -60,6 +63,7 @@ body: {
   password: 'some_password'
 }
 ```
+
 
 5) As a contractor I want to login to the system with email and password.
 
@@ -71,7 +75,8 @@ body: {
 }
 ```
 
-6) ###As a contractor I want to propose a quote to a consumer.
+
+6) As a contractor I want to propose a quote to a consumer.
 
 `POST http://localhost:8080/rest/v1/contractors/me/quotes`
 
@@ -85,6 +90,7 @@ body: {
   consumerId: 1
 }
 ```
+
 
 7) As a consumer I want to accept or reject a proposed quote.
 
