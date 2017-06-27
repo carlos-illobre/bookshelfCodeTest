@@ -18,7 +18,7 @@ Install:
 2) Install docker-compose: https://docs.docker.com/compose/install/
 3) Install nodeJs: https://nodejs.org/en/download/
 4) Clone the project: `git clone https://github.com/carlos-illobre/bookshelfCodeTest`
-5) Inside `codetest` folder run: `npm start`
+5) Run: `npm start`
 6) Open a browser and go to: `http://localhost:8080/rest`
 
 
